@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url - FTP</title>
+    <link rel="icon" href="imagenes/syscom_favico.png">
+    <link href="estilos/estilo.css" rel="stylesheet">
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    <div class="barra_superior">
+        <img class="superior" src="imagenes/syscom.svg">
+    </div>
+    <div class="datos">
+        <b>URL Privada</b>
+        <input type="text" id="privada">
+        <img class="icono" src="imagenes/boton-derecha.png" onclick="convertir()">
+        <b class="url">URL Pública</b>
+        <input type="text" id="publica" disabled>
+        <button id="copiar" onclick="copiar()">Copiar</button>
+    </div>
+</body>
+</html>
