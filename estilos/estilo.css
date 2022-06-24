@@ -4,7 +4,7 @@ body
     font-family: sans-serif;
 }
 
-img.superior
+.superior
 {
     vertical-align: middle;
     width: 158px;
@@ -14,26 +14,25 @@ img.superior
 .barra_superior
 {
     background-color: #3c3c3c;
+    width: 100%;
 }
 
-div.datos
+.datos
 {
+    flex-direction: column;
     text-align: center;
     margin-top: 5%;
 }
 
-img.icono
+.priv
 {
-    width: 30px;
-    vertical-align: middle;
-    cursor: pointer;
-    margin: 0px 20px;
+    margin: 50px;
 }
 
 input
 {
     font-size: 16px;
-    width: 35%;
+    width: 680px;
     height: 25px;
 }
 
@@ -47,4 +46,27 @@ button
     height: 30px;
     width: 65px;
     font-size: 14px;
+    margin: 0 22px;
+}
+
+.mensaje
+{
+    background-color: #467a49e0;
+    position: absolute;
+    width: 300px;
+    margin-left: 40%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 3px;
+    text-align: center;
+    color: #ffffff;
+    display: none;
+}
+
+@media only screen and (max-width: 750px)
+{
+    input
+    {
+        width: 75%;
+    }
 }
