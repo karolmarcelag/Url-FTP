@@ -20,14 +20,18 @@
         <div class="priv">
             <b>URL Privada</b>
             <input type="text" id="privada">
-            <button id="generar" onclick="convertir(), copiar(), mensaje()">Generar</button>
+            <button id="generar" onclick="validar(), generar(), copiar()">Generar</button>
         </div>
         <div class="pub">
             <b class="url">URL Pública</b>
             <input type="text" id="publica" disabled>
-            <button id="vaciar" onclick="vaciar()">Limpiar</button>
+            <button id="limpiar" onclick="mostrar(), limpiar()">Limpiar</button>
         </div>
-        <p id="mensaje1"><div class="mensaje" style="background: #467a49e0; color: #fff">URL copiado en el portapapeles</div></p>
+        <div id="mensaje1" class="mensaje" style="background: #467a49e0; color: #fff">URL copiado en el portapapeles</div>
+        <div id="mensaje2" class="mensaje" style="background: #d9534f; color: #fff">URL incorrecto</div>
+        <div class="contenedor">
+            <span id="tabla"></span>
+        </div>
     </div>
 </body>
 </html>

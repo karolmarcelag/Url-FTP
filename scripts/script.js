@@ -1,11 +1,14 @@
-function convertir()
+var codigo = ""
+
+function generar()
 {
-    if($("#privada").val() != "")
+    var urlPrivada = $("#privada").val()
+    var a = urlPrivada.indexOf("ftp://")
+    var b = urlPrivada.indexOf("@172.31.13.99/")
+    if(a >= 0 && b > 0)
     {
-        var urlPrivada = $("#privada").val()
-        var a = urlPrivada.indexOf("@172.31.13.99/")
-        var usuario = urlPrivada.substring(6, a)
-        var rutaCompleta = urlPrivada.substring(a)
+        var usuario = urlPrivada.substring(6, b)
+        var rutaCompleta = urlPrivada.substring(b)
         var ruta =  rutaCompleta.substring(14)
         console.log("Usuario: " + usuario)
         console.log("Ruta: " + ruta)
@@ -18,35 +21,53 @@ function copiar()
 {
     if($("#privada").val() != "")
     {
-        var urlPublica = document.getElementById("publica").value
+        var urlPublica = $("#publica").val()
         navigator.clipboard.writeText(urlPublica)
         console.log("URL Pública: " + urlPublica)
     }
 }
 
-function mensaje()
+function ocultar()
 {
-    $("#mensaje1").css({"display":"block"})
+    $("#mensaje1").css({"display":"none"})
+    $("#mensaje2").css({"display":"none"})
 }
 
-/*function esperar(espera)
+function limpiar()
 {
-    string = "pausa_alerta("+ espera +")"
-    setTimeout(string, espera)
-    //mensaje = setTimeout(mensaje, 2000)
+    $("#privada").val("")
+    $("#publica").val("")
 }
 
-function pausa_alerta(espera)
+function validar()
 {
-    alert("ok " + espera/1000 + " segundos")
-    //window.setTimeout(mensaje(), 2000)
-    /*alert("Copiado")
-    clearTimeout(mensaje)*/
-    //$("#mensaje1").prop({"disabled":false})
-/*}*/
+    var urlPrivada = $("#privada").val()
+    var a = urlPrivada.indexOf("ftp://")
+    var b = urlPrivada.indexOf("@172.31.13.99/")
+    if(a >= 0 && b > 0)
+    {
+        $("#mensaje1").css({"display":"block"})
+        setTimeout(ocultar, 2000)
+    }
+    else
+    {
+        $("#publica").val("")
+        $("#mensaje2").css({"display":"block"})
+        setTimeout(ocultar, 2000)
+    }
+}
 
-function vaciar()
+function mostrar()
 {
-    document.getElementById("privada").value = ""
-    document.getElementById("publica").value = ""
+    var urlPrivada = $("#privada").val()
+    var a = urlPrivada.indexOf("ftp://")
+    var b = urlPrivada.indexOf("@172.31.13.99/")
+    if(a >= 0 && b > 0)
+    {
+        codigo = 
+        "<div style='width:100%;'>"+
+            $("#publica").val() +
+        "</div><br>" + codigo
+        $("#tabla").html(codigo)        
+    }
 }
